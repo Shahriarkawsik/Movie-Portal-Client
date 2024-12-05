@@ -67,7 +67,7 @@ const Register = () => {
 
   const { pathname } = useLocation();
   useEffect(() => {
-    document.title = "Register | Eco-Adventure Experiences";
+    document.title = "Register | Movie Portal";
   }, [pathname]);
   return (
     <section className="w-1/2 mx-auto space-y-6">
