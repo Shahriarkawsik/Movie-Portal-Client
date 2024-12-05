@@ -1,13 +1,25 @@
 import { Link, useLocation } from "react-router-dom";
 import BGImg from "../../assets/image/BG/11.png";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Alert } from "./../../Alert/Alert";
 import Select from "react-select";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const AddMovie = () => {
+  const { user } = useContext(AuthContext);
+
   /******** Genre ********/
-  const genres = ["Comedy", "Drama", "Horror", "Action", "Thriller"];
-  const [genre, setSelectedGenres] = useState([]);
+  const genres = [
+    "comedy",
+    "drama",
+    "horror",
+    "adventure",
+    "war",
+    "crime",
+    "action",
+    "sci-fi",
+  ];
+  // const [genre, setSelectedGenres] = useState(null);
 
   const handleCheckboxChange = (event) => {
     const { value, checked } = event.target;
@@ -35,11 +47,11 @@ const AddMovie = () => {
     const form = event.target;
     const moviePoster = form.poster.value;
     const movieTitle = form.title.value;
+    const genre = form.genre.value;
     const duration = form.duration.value;
     const releaseYear = form.releaseYear.value;
     const rating = form.rating.value;
     const summary = form.summary.value;
-    // const genre = form.genre.value;
 
     const photoUrlRegex = /^https?:\/\/(?:[a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,}(?:\/[^\s]*)?\.(?:jpg|jpeg|png|gif|bmp|webp)(\?.*)?$/;
     if (!photoUrlRegex.test(moviePoster)) {
@@ -58,9 +70,10 @@ const AddMovie = () => {
       releaseYear,
       rating,
       summary,
+      authorEmail: user.email,
     };
-
-    fetch("http://localhost:5000/movies", {
+    console.log(movieDetails);
+    fetch(`${import.meta.env.VITE_BASE_URL}/movies`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -93,7 +106,7 @@ const AddMovie = () => {
             onSubmit={handleAddMovie}
             className="card-body grid grid-cols-1 lg:grid-cols-2"
           >
-            <div className="form-control">
+            <div className="form-control ">
               <label className="label">
                 <span className="font-semibold font-Raleway text-color3.8 text-xl ">
                   Movie Poster URL
@@ -123,37 +136,20 @@ const AddMovie = () => {
             </div>
 
             {/* Genre */}
-            <div className="form-control">
+            <div className="form-control ">
               <label className="label">
                 <span className="font-semibold text-color3.8 text-xl ">
                   Genre
                 </span>
               </label>
 
-              {genres.map((genre, index) => (
-                <div key={index}>
-                  <input
-                    type="checkbox"
-                    id={`genre-${index}`}
-                    value={genre}
-                    onChange={handleCheckboxChange}
-                  />
-                  <label
-                    htmlFor={`genre-${index}`}
-                    style={{ marginLeft: "8px" }}
-                  >
+              <select name="genre" className="input input-bordered">
+                {genres.map((genre) => (
+                  <option key={genre} value={genre}>
                     {genre}
-                  </label>
-                </div>
-              ))}
-
-              {/* <input
-                name="genre"
-                type="text"
-                placeholder="Genre"
-                className="input input-bordered"
-                required
-              /> */}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {/* Duration */}
@@ -218,10 +214,13 @@ const AddMovie = () => {
               <textarea
                 name="summary"
                 type="text"
+                cols="30"
+                rows="3"
                 style={{ resize: "none" }}
                 placeholder="Enter Movie Summary ( Minimum 10 characters required )"
-                className="input input-bordered p-3"
+                className="rounded-xl border-2 p-3"
                 minLength={10}
+                maxLength={250}
                 required
               />
             </div>

@@ -14,6 +14,7 @@ import AddMovie from "./components/AddMovie/AddMovie";
 import PrivateRoutes from "./components/Routes/PrivateRoutes";
 import MyFavorites from "./components/MyFavorites/MyFavorites";
 import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
+import MovieDetails from "./components/AllMovie/MovieDetails";
 
 const router = createBrowserRouter([
   {
@@ -26,8 +27,14 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/allMovies",
+        path: "/movies",
         element: <AllMovie />,
+      },
+      {
+        path: "/movies/:id",
+        element: <MovieDetails />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/movies/${params.id}`),
       },
       {
         path: "/addMovie",

@@ -20,7 +20,7 @@ const NavBar = () => {
         className={
           "hover:bg-teal-600 hover:rounded-md hover:px-2 hover:py-1 hover:text-white "
         }
-        to={"/allMovies"}
+        to={"/movies"}
       >
         All Movies
       </NavLink>
@@ -106,7 +106,7 @@ const NavBar = () => {
           </div>
           <Link
             to={"/"}
-            className="btn hover:bg-teal-600 hover:text-white btn-ghost Nothing sm:text-2xl lg:text-2xl"
+            className="btn hover:bg-teal-600 hover:text-white btn-ghost Nothing sm:text-2xl lg:text-2xl font-JosefinSans uppercase tracking-wider"
           >
             Movie Portal
           </Link>

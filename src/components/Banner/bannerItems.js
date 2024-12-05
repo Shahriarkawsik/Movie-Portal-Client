@@ -23,7 +23,7 @@ export const BannerItems = () => {
   const [bannerItems, setBannerItems] = useState([]);
 
   useEffect(() => {
-    fetch("eco.json")
+    fetch("http://localhost:3000/movieBanner")
       .then((response) => response.json())
       .then((data) => setBannerItems(data));
   }, []);

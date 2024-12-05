@@ -15,7 +15,7 @@ export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); 
   const [loading, setLoading] = useState(true);
   const [inputEmail, setInputEmail] = useState("");
   // Create a user
@@ -54,6 +54,20 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
+  useEffect(() => {
+    if (user) {
+      fetch(`${import.meta.env.VITE_BASE_URL}/user`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          username: user?.displayName,
+          email: user?.email,
+        }),
+      });
+    }
+  }, [user]);
   const [destination, setDestination] = useState("/");
   const AuthInfo = {
     createUser,
