@@ -87,17 +87,17 @@ const Subscription = () => {
             Subscribe
           </button>
         </div>
-        {/* 6-Month Pack */}
+        {/* 3-Month Pack */}
         <div
           data-aos="fade-up"
           data-aos-duration="1000"
           className="border hover:border-pink-700 hover:shadow-2xl p-5 rounded-xl flex justify-between items-center font-Roboto bg-color2"
         >
           <div className="space-y-5 font-Roboto">
-            <h2 className="text-xl font-semibold">6-Month Pack</h2>
+            <h2 className="text-xl font-semibold">3-Month Pack</h2>
             <p>3 Devices Login and 1 Simultaneous Stream </p>
             <h1>
-              <span className="text-xl font-semibold">BDT 249</span> / 180 Day's
+              <span className="text-xl font-semibold">BDT 199</span> / 90 Day's
             </h1>
           </div>
           <button className="bg-color1 text-white py-1 px-10 text-xl rounded-md">
