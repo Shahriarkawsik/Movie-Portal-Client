@@ -16,6 +16,7 @@ import MyFavorites from "./components/MyFavorites/MyFavorites";
 import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
 import MovieDetails from "./components/AllMovie/MovieDetails";
 import Subscription from "./components/Subscription/Subscription";
+import About from "./components/About/About";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/subscription",

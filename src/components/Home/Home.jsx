@@ -5,6 +5,7 @@ import Banner from "../Banner/Banner";
 import TrailerMovie from "../TrendingMovie/TrendingMovie";
 import Footer from "../Footer/Footer";
 import SubscriptionDemo from "../Subscription/SubscriptionDemo";
+import ContactFeedback from "../ContactFeedback/ContactFeedback";
 const Home = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -20,6 +21,7 @@ const Home = () => {
       <Banner></Banner>
       <TrailerMovie></TrailerMovie>
       <SubscriptionDemo />
+      <ContactFeedback/>
       {/* <div className="w-11/12 lg:w-9/12 mx-auto"></div> */}
     </div>
   );

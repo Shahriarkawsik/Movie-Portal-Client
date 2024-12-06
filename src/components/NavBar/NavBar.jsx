@@ -50,6 +50,12 @@ const NavBar = () => {
         Register
       </NavLink>
       <NavLink
+        className={" hover:rounded-md hover:px-2 hover:py-1 "}
+        to={"/about"}
+      >
+        About
+      </NavLink>
+      <NavLink
         className={`bg-color1 rounded-md px-2 py-1 text-white`}
         to={"/subscription"}
       >
