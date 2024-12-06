@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 // import Movie from "./movie";
 import bgImg from "../../assets/image/BG/bgImg.jpg";
 import FavoriteMovieCard from "./FavoriteMovieCard";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const MyFavorites = () => {
+  const { user } = useContext(AuthContext);
   const { pathname } = useLocation();
   useEffect(() => {
     document.title = "Favorite Movie | Movie Portal";
@@ -12,11 +14,22 @@ const MyFavorites = () => {
 
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/user`)
-      .then((res) => res.json())
-      .then((data) => setMovies(data.data));
+    if (user) {
+      console.log(user.email);
+      fetch(`${import.meta.env.VITE_BASE_URL}/favorite?email=${user.email}`, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+        },
+      })
+        .then((res) => res.json())
+        .then((getRes) => {
+          setMovies(getRes.data.favorite);
+          console.log(getRes.data.favorite);
+        });
+    }
   }, []);
-  console.log(movies);
+
   return (
     <div
       className="py-10 space-y-10"

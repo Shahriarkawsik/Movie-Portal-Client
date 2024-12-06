@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BGImg from "../../assets/image/BG/10.png";
 import Banner from "../Banner/Banner";
+import TrailerMovie from "../TrendingMovie/TrendingMovie";
 const Home = () => {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -15,6 +16,7 @@ const Home = () => {
       }}
     >
       <Banner></Banner>
+      <TrailerMovie></TrailerMovie>
       {/* <div className="w-11/12 lg:w-9/12 mx-auto"></div> */}
     </div>
   );

@@ -1,9 +1,13 @@
 import React from "react";
 import BGImg from "../../assets/image/BG/10.png";
-import { data, Link } from "react-router-dom";
+import { data, Link, useNavigate } from "react-router-dom";
 import { Alert } from "./../../Alert/Alert";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const FavoriteMovieCard = ({ movie }) => {
+  const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     _id,
     moviePoster,
@@ -16,22 +20,22 @@ const FavoriteMovieCard = ({ movie }) => {
   } = movie;
 
   const handleDeleteFavorite = (id) => {
-    Alert(true, "clicked");
-    console.log(id);
-
-    // fetch(`http://localhost:3000/favorite/${id}`, {
-    //   method: "DELETE",
-    // })
-    //   .then((res) => {
-    //     res.json();
-    //   })
-    //   .then((data) => {
-    //     if (data.success) {
-    //       Alert(true, data.message);
-    //     } else {
-    //       Alert(false, data.message);
-    //     }
-    //   });
+    fetch(`http://localhost:3000/favorite/${id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ email: user.email }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data.success) {
+          Alert(false, data.message);
+        } else {
+          Alert(true, data.message);
+          navigate("/movies");
+        }
+      });
   };
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg bg-gray-900 text-white relative ">

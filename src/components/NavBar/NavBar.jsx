@@ -31,17 +31,17 @@ const NavBar = () => {
             className={
               "hover:bg-teal-600 hover:rounded-md hover:px-2 hover:py-1 hover:text-white "
             }
-            to={"/addMovie"}
+            to={"/myFavorites"}
           >
-            Add Movie
+            My Favorites
           </NavLink>
           <NavLink
             className={
               "hover:bg-teal-600 hover:rounded-md hover:px-2 hover:py-1 hover:text-white "
             }
-            to={"/myFavorites"}
+            to={"/addMovie"}
           >
-            My Favorites
+            Add Movie
           </NavLink>
         </>
       ) : (

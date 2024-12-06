@@ -6,7 +6,7 @@ import bgImg from "../../assets/image/BG/bgImg.jpg";
 const AllMovie = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:3000/movies`)
+    fetch(`${import.meta.env.VITE_BASE_URL}/movies`)
       .then((res) => res.json())
       .then((data) => setMovies(data.data));
   }, []);

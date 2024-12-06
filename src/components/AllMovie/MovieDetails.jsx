@@ -7,9 +7,13 @@ import {
 } from "react-router-dom";
 import BGImg from "../../assets/image/BG/10.png";
 import { Alert } from "../../Alert/Alert";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 const MovieDetails = () => {
   const navigate = useNavigate();
   const { data } = useLoaderData();
+  const { user } = useContext(AuthContext);
+
   const {
     _id,
     moviePoster,
@@ -44,14 +48,13 @@ const MovieDetails = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify({ email: authorEmail, id: _id }),
+      body: JSON.stringify({ email: user.email, id: _id }),
     })
       .then((res) => res.json())
       .then((data) => {
-        if(data.success){
-          Alert(true,data.message)
+        if (data.success) {
+          Alert(true, data.message);
         }
-        console.log(data.success);
       });
   };
 
