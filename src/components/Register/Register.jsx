@@ -70,7 +70,7 @@ const Register = () => {
     document.title = "Register | Movie Portal";
   }, [pathname]);
   return (
-    <section className="w-1/2 mx-auto space-y-6">
+    <section className="w-1/2 mx-auto space-y-6 py-6">
       <h1 className="text-5xl font-bold text-center">Register Now</h1>
       <form onSubmit={handleRegister} className="space-y-4">
         {/* Username */}

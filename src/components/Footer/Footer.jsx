@@ -61,7 +61,7 @@ const Footer = () => {
             <h2 className="text-lg font-semibold mb-4">Follow Us</h2>
             <div className="flex space-x-4">
               <a
-                href="https://www.facebook.com/movieportal"
+                href="https://www.facebook.com/shahriar.kawsik"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-500"
@@ -70,7 +70,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://x.com/movieportal"
+                href="https://x.com/ShahriarKawsik"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-400"
@@ -78,7 +78,7 @@ const Footer = () => {
                 <FaTwitter size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/company/movieportal"
+                href="https://www.linkedin.com/in/shahriar-kawsik-21916117b/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-600"
@@ -86,7 +86,7 @@ const Footer = () => {
                 <FaLinkedin size={24} />
               </a>
               <a
-                href="https://www.instagram.com/movieportal/"
+                href="http://www.instagram.com/shahriar.kawsik/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-pink-500"
