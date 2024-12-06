@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Movie = ({ movie }) => {
+const TrendingMovieCard = ({ movie }) => {
   const {
     _id,
     moviePoster,
@@ -11,8 +11,8 @@ const Movie = ({ movie }) => {
     releaseYear,
     rating,
     summary,
+    authorEmail,
   } = movie;
-
   return (
     <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-gray-900 text-white relative ">
       <img
@@ -57,4 +57,4 @@ const Movie = ({ movie }) => {
   );
 };
 
-export default Movie;
+export default TrendingMovieCard;
