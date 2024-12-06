@@ -27,7 +27,7 @@ const MovieDetails = () => {
   } = data;
 
   const handleDeleteMovie = (id) => {
-    fetch(`http://localhost:3000/movies/${id}`, {
+    fetch(`${import.meta.env.VITE_BASE_URL}/movies/${id}`, {
       method: "DELETE",
     })
       .then((response) => {
@@ -43,7 +43,7 @@ const MovieDetails = () => {
   };
 
   const handleAddFavorite = () => {
-    fetch(`http://localhost:3000/favorite`, {
+    fetch(`${import.meta.env.VITE_BASE_URL}/favorite`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -53,6 +53,7 @@ const MovieDetails = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.success) {
+          navigate("/myFavorites");
           Alert(true, data.message);
         }
       });

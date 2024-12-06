@@ -20,7 +20,7 @@ const FavoriteMovieCard = ({ movie }) => {
   } = movie;
 
   const handleDeleteFavorite = (id) => {
-    fetch(`http://localhost:3000/favorite/${id}`, {
+    fetch(`${import.meta.env.VITE_BASE_URL}/favorite/${id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",

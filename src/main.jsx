@@ -34,7 +34,7 @@ const router = createBrowserRouter([
         path: "/movies/:id",
         element: <MovieDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/movies/${params.id}`),
+          fetch(`${import.meta.env.VITE_BASE_URL}/movies/${params.id}`),
       },
       {
         path: "/addMovie",

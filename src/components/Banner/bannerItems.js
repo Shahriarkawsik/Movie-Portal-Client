@@ -23,7 +23,7 @@ export const BannerItems = () => {
   const [bannerItems, setBannerItems] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/movieBanner")
+    fetch(`${import.meta.env.VITE_BASE_URL}/movieBanner`)
       .then((response) => response.json())
       .then((data) => setBannerItems(data));
   }, []);
