@@ -8,18 +8,11 @@ const NavBar = () => {
 
   const navItems = (
     <>
-      <NavLink
-        className={
-          "hover:bg-teal-600 hover:rounded-md hover:px-2 hover:py-1 hover:text-white "
-        }
-        to={"/"}
-      >
+      <NavLink className={" hover:rounded-md hover:px-2 hover:py-1 "} to={"/"}>
         Home
       </NavLink>
       <NavLink
-        className={
-          "hover:bg-teal-600 hover:rounded-md hover:px-2 hover:py-1 hover:text-white "
-        }
+        className={" hover:rounded-md hover:px-2 hover:py-1 "}
         to={"/movies"}
       >
         All Movies
@@ -28,17 +21,13 @@ const NavBar = () => {
       {user ? (
         <>
           <NavLink
-            className={
-              "hover:bg-teal-600 hover:rounded-md hover:px-2 hover:py-1 hover:text-white "
-            }
+            className={" hover:rounded-md hover:px-2 hover:py-1 "}
             to={"/myFavorites"}
           >
             My Favorites
           </NavLink>
           <NavLink
-            className={
-              "hover:bg-teal-600 hover:rounded-md hover:px-2 hover:py-1 hover:text-white "
-            }
+            className={" hover:rounded-md hover:px-2 hover:py-1 "}
             to={"/addMovie"}
           >
             Add Movie
@@ -47,23 +36,25 @@ const NavBar = () => {
       ) : (
         <>
           <NavLink
-            className={
-              "hover:bg-teal-600 hover:rounded-md hover:px-2 hover:py-1 hover:text-white "
-            }
+            className={" hover:rounded-md hover:px-2 hover:py-1 "}
             to={"/login"}
           >
             Login
           </NavLink>
-          <NavLink
-            className={
-              "hover:bg-teal-600 hover:rounded-md hover:px-2 hover:py-1 hover:text-white "
-            }
-            to={"/register"}
-          >
-            Register
-          </NavLink>
         </>
       )}
+      <NavLink
+        className={" hover:rounded-md hover:px-2 hover:py-1 "}
+        to={"/movies"}
+      >
+        All Movies
+      </NavLink>
+      <NavLink
+        className={`bg-color1 rounded-md px-2 py-1 text-white`}
+        to={"/subscription"}
+      >
+        Subscribe Now
+      </NavLink>
     </>
   );
   // handleSignOut
@@ -99,20 +90,20 @@ const NavBar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-color1"
+              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow "
             >
               {navItems}
             </ul>
           </div>
           <Link
             to={"/"}
-            className="btn hover:bg-teal-600 hover:text-white btn-ghost Nothing sm:text-2xl lg:text-2xl font-JosefinSans uppercase tracking-wider"
+            className="btn btn-ghost Nothing sm:text-2xl lg:text-2xl font-JosefinSans uppercase tracking-wider"
           >
             Movie Portal
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal items-center px-1 gap-7 text-xl text-color1">
+          <ul className="menu menu-horizontal items-center px-1 gap-7 text-xl ">
             {navItems}
           </ul>
         </div>

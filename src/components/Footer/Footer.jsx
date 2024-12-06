@@ -5,7 +5,7 @@ const Footer = () => {
     <footer
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="bg-gray-800 text-gray-200 py-10 mt-52 relative bottom-0"
+      className="bg-gray-800 text-gray-200 py-10 relative bottom-0"
     >
       <div className="container mx-auto px-5">
         {/* Flex container for larger screens */}
