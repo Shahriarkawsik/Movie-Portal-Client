@@ -19,6 +19,7 @@ const MovieDetails = () => {
     releaseYear,
     rating,
     summary,
+    authorEmail,
   } = data;
 
   const handleDeleteMovie = (id) => {
@@ -37,17 +38,20 @@ const MovieDetails = () => {
       .catch((error) => console.error("Error:", error));
   };
 
-  const handleAddFavorite = (id) => {
+  const handleAddFavorite = () => {
     fetch(`http://localhost:3000/favorite`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ email: authorEmail, id: _id }),
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if(data.success){
+          Alert(true,data.message)
+        }
+        console.log(data.success);
       });
   };
 
