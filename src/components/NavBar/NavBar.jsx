@@ -45,9 +45,9 @@ const NavBar = () => {
       )}
       <NavLink
         className={" hover:rounded-md hover:px-2 hover:py-1 "}
-        to={"/movies"}
+        to={"/register"}
       >
-        All Movies
+        Register
       </NavLink>
       <NavLink
         className={`bg-color1 rounded-md px-2 py-1 text-white`}
