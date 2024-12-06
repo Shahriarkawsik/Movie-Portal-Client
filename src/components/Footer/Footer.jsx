@@ -12,12 +12,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Project Info */}
           <div>
-            <h2 className="text-lg font-semibold mb-4">
-              Eco-Adventure Experiences
-            </h2>
+            <h2 className="text-lg font-semibold mb-4">Movie Portal</h2>
             <p className="text-sm">
-              Explore the best adventures around the world with expert guidance.
-              Embark on your journey with us!
+              Discover, review, and stay updated with the latest movies. Your
+              one-stop destination for all things cinema!
             </p>
           </div>
 
@@ -31,8 +29,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <a href="/adventures" className="hover:underline">
-                  Adventures
+                <a href="/movies" className="hover:underline">
+                  Movies
                 </a>
               </li>
               <li>
@@ -41,7 +39,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="/" className="hover:underline">
+                <a href="/contact" className="hover:underline">
                   Contact
                 </a>
               </li>
@@ -52,9 +50,9 @@ const Footer = () => {
           <div>
             <h2 className="text-lg font-semibold mb-4">Contact Us</h2>
             <ul className="space-y-2">
-              <li>Email: info@eco-adventures.com</li>
-              <li>Phone: +123-456-7890</li>
-              <li>Address: 123 Adventure Lane, Nature City</li>
+              <li>Email: support@movieportal.com</li>
+              <li>Phone: +987-654-3210</li>
+              <li>Address: 456 Film Street, Hollywood</li>
             </ul>
           </div>
 
@@ -63,7 +61,7 @@ const Footer = () => {
             <h2 className="text-lg font-semibold mb-4">Follow Us</h2>
             <div className="flex space-x-4">
               <a
-                href="https://www.facebook.com/shahriar.kawsik"
+                href="https://www.facebook.com/movieportal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-500"
@@ -72,7 +70,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://x.com/ShahriarKawsik"
+                href="https://x.com/movieportal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-400"
@@ -80,7 +78,7 @@ const Footer = () => {
                 <FaTwitter size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/in/shahriar-kawsik-21916117b/"
+                href="https://www.linkedin.com/company/movieportal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-blue-600"
@@ -88,7 +86,7 @@ const Footer = () => {
                 <FaLinkedin size={24} />
               </a>
               <a
-                href="https://www.instagram.com/shahriar.kawsik/"
+                href="https://www.instagram.com/movieportal/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-pink-500"
@@ -102,7 +100,7 @@ const Footer = () => {
         {/* Footer Bottom Section */}
         <div className="mt-10 text-center border-t border-gray-700 pt-5">
           <p className="text-sm">
-            &copy; 2024 Eco-Adventure Experiences. All rights reserved.
+            &copy; 2024 Movie Portal. All rights reserved.
           </p>
         </div>
       </div>
