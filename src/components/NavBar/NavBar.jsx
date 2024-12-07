@@ -41,14 +41,14 @@ const NavBar = () => {
           >
             Login
           </NavLink>
+          <NavLink
+            className={" hover:rounded-md hover:px-2 hover:py-1 "}
+            to={"/register"}
+          >
+            Register
+          </NavLink>
         </>
       )}
-      <NavLink
-        className={" hover:rounded-md hover:px-2 hover:py-1 "}
-        to={"/register"}
-      >
-        Register
-      </NavLink>
       <NavLink
         className={" hover:rounded-md hover:px-2 hover:py-1 "}
         to={"/about"}
