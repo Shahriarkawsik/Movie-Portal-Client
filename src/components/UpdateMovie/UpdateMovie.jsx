@@ -179,8 +179,8 @@ const UpdateMovie = () => {
                   Duration
                 </span>
               </label>
-              <input 
-              defaultValue={duration}
+              <input
+                defaultValue={duration}
                 name="duration"
                 type="number"
                 placeholder="Enter Movie Duration ( more then 60)"
@@ -240,6 +240,7 @@ const UpdateMovie = () => {
               </label>
               {/* <textarea name="" id="" cols="30" rows="10"></textarea> */}
               <textarea
+                defaultValue={summary}
                 name="summary"
                 type="text"
                 cols="30"
