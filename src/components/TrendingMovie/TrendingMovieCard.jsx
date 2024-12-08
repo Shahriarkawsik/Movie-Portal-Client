@@ -14,7 +14,7 @@ const TrendingMovieCard = ({ movie }) => {
     authorEmail,
   } = movie;
   return (
-    <div className="max-w-sm rounded-lg overflow-hidden shadow-lg bg-gray-900 text-white relative ">
+    <div className="rounded-lg overflow-hidden shadow-lg dark:bg-gray-900 bg-gray-600 text-white dark:text-white relative ">
       <img
         data-aos="zoom-in"
         data-aos-duration="1000"

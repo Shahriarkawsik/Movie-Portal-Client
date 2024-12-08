@@ -25,7 +25,7 @@ const ContactFeedback = () => {
     <section
       data-aos="fade-up"
       data-aos-duration="1000"
-      className="bg-gray-900 text-gray-200 py-16 px-5"
+      className="dark:bg-gray-900 dark:text-white bg-gray-300 text-black py-16 px-5"
     >
       <div className="container mx-auto max-w-4xl">
         {/* Header */}
@@ -40,7 +40,7 @@ const ContactFeedback = () => {
         {/* Feedback Form */}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="bg-gray-800 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg"
+          className="bg-gray-800 text-white p-6 sm:p-8 md:p-10 rounded-lg shadow-lg"
         >
           {/* Name Field */}
           <div className="mb-6">
