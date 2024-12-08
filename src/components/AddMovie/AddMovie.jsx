@@ -85,7 +85,7 @@ const AddMovie = () => {
       summary,
       authorEmail: user.email,
     };
-    
+
     fetch(`${import.meta.env.VITE_BASE_URL}/movies`, {
       method: "POST",
       headers: {
