@@ -112,21 +112,26 @@ const UpdateMovie = () => {
     <section
       style={{
         backgroundImage: `url(${BGImg})`,
-        backgroundSize: "100% 100%",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
+      className="py-10 px-4 md:px-8"
     >
-      <div className="w-11/12 lg:w-9/12 mx-auto space-y-10">
+      <div className="max-w-5xl mx-auto space-y-10">
         <div>
-          <h2 className="text-4xl font-bold text-center">Update Movie</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center">
+            Update Movie
+          </h2>
         </div>
-        <div className="bg-[rgb(244, 243, 240)] shadow-2xl rounded-xl">
+        <div className="bg-[rgb(244, 243, 240)] shadow-2xl rounded-xl p-6">
           <form
             onSubmit={handleUpdateMovie}
-            className="card-body grid grid-cols-1 lg:grid-cols-2"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
           >
-            <div className="form-control ">
+            {/* Movie Poster */}
+            <div className="form-control">
               <label className="label">
-                <span className="font-semibold font-Raleway text-color3.8 text-xl ">
+                <span className="font-semibold text-gray-700 text-lg md:text-xl">
                   Movie Poster URL
                 </span>
               </label>
@@ -135,13 +140,15 @@ const UpdateMovie = () => {
                 name="poster"
                 type="text"
                 placeholder="Enter valid Movie Poster URL"
-                className="input input-bordered"
+                className="input input-bordered w-full"
                 required
               />
             </div>
+
+            {/* Movie Title */}
             <div className="form-control">
               <label className="label">
-                <span className="font-semibold text-color3.8 text-xl ">
+                <span className="font-semibold text-gray-700 text-lg md:text-xl">
                   Movie Title
                 </span>
               </label>
@@ -150,20 +157,19 @@ const UpdateMovie = () => {
                 name="title"
                 type="text"
                 placeholder="Enter Movie Title"
-                className="input input-bordered"
+                className="input input-bordered w-full"
                 required
               />
             </div>
 
             {/* Genre */}
-            <div className="form-control ">
+            <div className="form-control">
               <label className="label">
-                <span className="font-semibold text-color3.8 text-xl ">
+                <span className="font-semibold text-gray-700 text-lg md:text-xl">
                   Genre
                 </span>
               </label>
-
-              <select name="genre" className="input input-bordered">
+              <select name="genre" className="input input-bordered w-full">
                 {genres.map((genre) => (
                   <option key={genre} value={genre}>
                     {genre}
@@ -175,7 +181,7 @@ const UpdateMovie = () => {
             {/* Duration */}
             <div className="form-control">
               <label className="label">
-                <span className="font-semibold text-color3.8 text-xl ">
+                <span className="font-semibold text-gray-700 text-lg md:text-xl">
                   Duration
                 </span>
               </label>
@@ -183,23 +189,23 @@ const UpdateMovie = () => {
                 defaultValue={duration}
                 name="duration"
                 type="number"
-                placeholder="Enter Movie Duration ( more then 60)"
-                className="input input-bordered"
+                placeholder="Enter Movie Duration (more than 60)"
+                className="input input-bordered w-full"
                 min={60}
                 required
               />
             </div>
+
             {/* Release Year */}
             <div className="form-control">
               <label className="label">
-                <span className="font-semibold text-color3.8 text-xl ">
+                <span className="font-semibold text-gray-700 text-lg md:text-xl">
                   Release Year
                 </span>
               </label>
               <select
-                id="year"
                 name="releaseYear"
-                className="input input-bordered"
+                className="input input-bordered w-full"
               >
                 {years.map((year) => (
                   <option key={year.value} value={year.value}>
@@ -208,58 +214,59 @@ const UpdateMovie = () => {
                 ))}
               </select>
             </div>
+
             {/* Rating */}
             <div className="form-control">
               <label className="label">
-                <span className="font-semibold text-color3.8 text-xl ">
+                <span className="font-semibold text-gray-700 text-lg md:text-xl">
                   Rating
                 </span>
               </label>
               <Rating
                 onClick={handleRating}
                 ratingValue={rating}
-                size={50}
+                size={40}
                 fillColor="gold"
                 emptyColor="gray"
-                max={5}
                 iconsCount={5}
-                allowHalfIcon={true}
+                allowHalfIcon
               />
-              <div>
-                <span className="text-sm text-gray-600">
-                  Selected Rating: {rating} Stars
-                </span>
-              </div>
+              <span className="text-sm text-gray-600">
+                Selected Rating: {rating} Stars
+              </span>
             </div>
+
             {/* Summary */}
-            <div className="form-control col-span-2">
+            <div className="form-control col-span-1 md:col-span-2">
               <label className="label">
-                <span className="font-semibold text-color3.8 text-xl ">
+                <span className="font-semibold text-gray-700 text-lg md:text-xl">
                   Summary
                 </span>
               </label>
-              {/* <textarea name="" id="" cols="30" rows="10"></textarea> */}
               <textarea
                 defaultValue={summary}
                 name="summary"
-                type="text"
                 cols="30"
-                rows="3"
-                style={{ resize: "none" }}
-                placeholder="Enter Movie Summary ( Minimum 10 characters required )"
-                className="rounded-xl border-2 p-3"
+                rows="4"
+                className="rounded-xl border-2 p-3 w-full"
+                placeholder="Enter Movie Summary (minimum 10 characters)"
                 minLength={10}
                 maxLength={250}
+                style={{
+                  resize: "none",
+                }}
                 required
-              />
+              ></textarea>
             </div>
 
-            <div className="form-control mt-6 col-span-2 ">
-              <input
+            {/* Submit Button */}
+            <div className="form-control mt-6 col-span-1 md:col-span-2">
+              <button
                 type="submit"
-                value="Update Movie"
-                className="btn text-color4 bg-color7 text-2xl font-Rancho"
-              />
+                className="btn w-full bg-blue-500 text-white text-lg py-3 rounded-lg hover:bg-blue-600"
+              >
+                Update Movie
+              </button>
             </div>
           </form>
         </div>
