@@ -32,6 +32,12 @@ const NavBar = () => {
           >
             Add Movie
           </NavLink>
+          {/* <NavLink
+            className={" hover:rounded-md hover:px-2 hover:py-1 "}
+            to={"/updateMovie/"}
+          >
+            Update Movie
+          </NavLink> */}
         </>
       ) : (
         <>

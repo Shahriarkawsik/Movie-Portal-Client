@@ -100,6 +100,14 @@ const MovieDetails = () => {
                 Delete Movie
               </button>
             </Link>
+            <Link to={`/updateMovie/${_id}`}>
+              <button
+                // onClick={() => handleAddFavorite()}
+                className="w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition  "
+              >
+                Update Movie
+              </button>
+            </Link>
             <Link>
               <button
                 onClick={() => handleAddFavorite()}

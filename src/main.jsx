@@ -18,6 +18,7 @@ import MovieDetails from "./components/AllMovie/MovieDetails";
 import Subscription from "./components/Subscription/Subscription";
 import About from "./components/About/About";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
+import UpdateMovie from "./components/UpdateMovie/UpdateMovie";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,16 @@ const router = createBrowserRouter([
             <AddMovie />
           </PrivateRoutes>
         ),
+      },
+      {
+        path: "/updateMovie/:id",
+        element: (
+          <PrivateRoutes>
+            <UpdateMovie />
+          </PrivateRoutes>
+        ),
+        loader: ({ params }) =>
+          fetch(`${import.meta.env.VITE_BASE_URL}/movies/${params.id}`),
       },
       {
         path: "/myFavorites",
