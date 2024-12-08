@@ -10,8 +10,7 @@ const Subscription = () => {
       title: "Success",
       icon: "success",
       text: "Subscription successful",
-      confirmButtonText: "close",
-      // confirmButtonColor:
+      confirmButtonText: "close",     
     });
   };
   return (

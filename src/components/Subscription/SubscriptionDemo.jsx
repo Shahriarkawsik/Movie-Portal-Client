@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SubscriptionDemo = () => {
   return (
     <div className="w-11/12 lg:w-9/12 mx-auto space-y-10 py-16">
-      <h1 className="text-center text-4xl font-semibold  font-JosefinSans ">
+      <h1 className="text-black text-center text-4xl font-semibold  font-JosefinSans ">
         Our Subscription
       </h1>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
@@ -73,7 +73,7 @@ const SubscriptionDemo = () => {
       </div>
       <div className="flex items-center justify-center">
         <Link to={"/subscription"}>
-          <button className="bg-green-900 hover:bg-green-700 text-2xl font-semibold font-JosefinSans px-14 py-2 text-white rounded-md flex items-center ">
+          <button className="bg-green-900 hover:bg-green-700 text-base sm:text-3xl lg:text-2xl font-semibold font-JosefinSans px-14 py-2 text-white rounded-md flex items-center ">
             <span className="mr-5">Explore More to get Free </span>{" "}
             <FaAngleDoubleRight />
             <FaAngleDoubleRight />

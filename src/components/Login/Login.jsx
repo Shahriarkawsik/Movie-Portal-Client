@@ -7,8 +7,12 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const Login = () => {
-  const { loginUser, createUserWithGoogle, destination, setInputEmail } =
-    useContext(AuthContext);
+  const {
+    loginUser,
+    createUserWithGoogle,
+    destination,
+    setInputEmail,
+  } = useContext(AuthContext);
   const emailRef = useRef();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
@@ -41,9 +45,9 @@ const Login = () => {
         setErrorMessage(error.message);
       });
   };
-  const { pathname } = useLocation(); 
+  const { pathname } = useLocation();
   useEffect(() => {
-    document.title = "Login | Eco-Adventure Experiences";
+    document.title = "Login | Movie Portal";
   }, [pathname]);
   return (
     <section className="w-1/2 mx-auto space-y-6">
