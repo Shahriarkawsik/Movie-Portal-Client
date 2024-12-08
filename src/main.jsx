@@ -17,12 +17,13 @@ import ForgetPassword from "./components/ForgetPassword/ForgetPassword";
 import MovieDetails from "./components/AllMovie/MovieDetails";
 import Subscription from "./components/Subscription/Subscription";
 import About from "./components/About/About";
+import ErrorPage from "./components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

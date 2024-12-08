@@ -21,6 +21,7 @@
     "react-multi-carousel": "^2.8.5",
     "react-router-dom": "^7.0.2",
     "react-select": "^5.8.3",
+    "react-simple-star-rating": "^5.1.7",
     "react-single-year-picker": "^1.1.4",
     "react-toastify": "^10.0.6",
     "single-year-picker": "^1.0.7",

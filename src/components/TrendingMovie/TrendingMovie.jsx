@@ -22,7 +22,7 @@ const TrendingMovie = () => {
       </div>
       <div className="flex justify-center items-center">
         <Link to={"/movies"}>
-          <button className="border rounded-full p-3 bg-gray-600 text-xl font-bold text-white">
+          <button className="dark:bg-red-700 border rounded-full p-3 bg-gray-600 text-xl font-bold text-white">
             See all movies
           </button>
         </Link>

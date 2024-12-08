@@ -15,9 +15,11 @@ export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); 
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [inputEmail, setInputEmail] = useState("");
+  const [dataLoading, setDataLoading] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   // Create a user
   const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password);
@@ -82,6 +84,10 @@ const AuthProvider = ({ children }) => {
     inputEmail,
     setInputEmail,
     resetUserPassword,
+    dataLoading,
+    setDataLoading,
+    isDark,
+    setIsDark,
   };
   return (
     <AuthContext.Provider value={AuthInfo}>{children}</AuthContext.Provider>

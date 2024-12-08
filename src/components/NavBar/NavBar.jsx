@@ -115,17 +115,18 @@ const NavBar = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <div className="space-x-2 flex">
+            <div className="relative group">
               <img
-                title={user?.displayName}
-                className="w-12 rounded-full "
+                className="w-12 h-12 rounded-full"
                 src={user?.photoURL}
-                alt=""
+                alt="photo"
               />
-              <Link className="btn" to={"/login"} onClick={handleSignOut}>
-                Log Out
-              </Link>
-              <button></button>
+              <div className="z-10 hidden group-hover:block absolute w-max right-0 top-12 bg-gray-200 p-3 rounded-s-lg space-y-4">
+                <h2>{user?.displayName}</h2>
+                <button className="btn " onClick={() => handleSignOut()}>
+                  Log out
+                </button>
+              </div>
             </div>
           ) : (
             <Link className="btn" to={"/login"}>
