@@ -35,7 +35,7 @@ const Movie = ({ movie }) => {
             <span className="font-semibold ">Release Year:</span> {releaseYear}
           </p>
           <p className="text-sm  mb-1">
-            <span className="font-semibold ">Rating:</span> ⭐ {rating}/10
+            <span className="font-semibold ">Rating:</span> ⭐ {rating}/5
           </p>
           <p className="text-sm  line-clamp-3 mb-4 ">{summary}</p>
         </div>

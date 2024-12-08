@@ -38,7 +38,7 @@ const TrendingMovieCard = ({ movie }) => {
           </p>
           <p className="text-sm text-gray-400 mb-1">
             <span className="font-semibold text-gray-300">Rating:</span> ⭐{" "}
-            {rating}/10
+            {rating}/5
           </p>
           <p className="text-sm text-gray-300 line-clamp-3 mb-4 ">{summary}</p>
         </div>

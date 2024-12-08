@@ -7,13 +7,13 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import SetLoading from "../SetLoading/SetLoading";
 
 const MyFavorites = () => {
+  const [movies, setMovies] = useState([]);
   const { user, dataLoading, setDataLoading } = useContext(AuthContext);
   const { pathname } = useLocation();
   useEffect(() => {
     document.title = "Favorite Movie | Movie Portal";
   }, [pathname]);
 
-  const [movies, setMovies] = useState([]);
   useEffect(() => {
     if (user) {
       setDataLoading(true);
@@ -27,7 +27,6 @@ const MyFavorites = () => {
         .then((getRes) => {
           setDataLoading(false);
           setMovies(getRes.data.favorite);
-          console.log(getRes.data.favorite);
         });
     }
   }, []);
@@ -44,7 +43,7 @@ const MyFavorites = () => {
       }}
     >
       <h1 className="text-white text-4xl text-center font-JosefinSans">
-        Your Favorite Movies
+        {movies.length ? "Your Favorite Movies" : "No favorite movie found"}
       </h1>
       <div className="w-11/12 lg:w-9/12 mx-auto ">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">

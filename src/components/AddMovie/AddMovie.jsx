@@ -4,8 +4,10 @@ import { useContext, useEffect, useState } from "react";
 import { Alert } from "./../../Alert/Alert";
 import Select from "react-select";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Rating } from "react-simple-star-rating";
 
 const AddMovie = () => {
+  const [rating, setRating] = useState(0);
   const { user } = useContext(AuthContext);
 
   /******** Genre ********/
@@ -19,6 +21,11 @@ const AddMovie = () => {
     "action",
     "sci-fi",
   ];
+  //
+  const handleRating = (rate) => {
+    setRating(rate);
+  };
+
   // const [genre, setSelectedGenres] = useState(null);
 
   const handleCheckboxChange = (event) => {
@@ -50,8 +57,13 @@ const AddMovie = () => {
     const genre = form.genre.value;
     const duration = form.duration.value;
     const releaseYear = form.releaseYear.value;
-    const rating = form.rating.value;
+    // const rating = form.rating.value;
+    const scaledRating = rating;
     const summary = form.summary.value;
+    if (rating === 0) {
+      Alert(false, "Please select a rating before submitting.");
+      return;
+    }
 
     const photoUrlRegex = /^https?:\/\/(?:[a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,}(?:\/[^\s]*)?\.(?:jpg|jpeg|png|gif|bmp|webp)(\?.*)?$/;
     if (!photoUrlRegex.test(moviePoster)) {
@@ -68,11 +80,12 @@ const AddMovie = () => {
       genre,
       duration,
       releaseYear,
-      rating,
+      // rating,
+      rating: scaledRating,
       summary,
       authorEmail: user.email,
     };
-    console.log(movieDetails);
+    
     fetch(`${import.meta.env.VITE_BASE_URL}/movies`, {
       method: "POST",
       headers: {
@@ -82,9 +95,14 @@ const AddMovie = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        if (data.success) {
+          Alert(true, data.message);
+        } else {
+          Alert(false, "Unsuccessful");
+        }
       });
-    event.target.reset();
+    form.reset();
+    setRating(0);
   };
   const { pathname } = useLocation();
   useEffect(() => {
@@ -194,14 +212,29 @@ const AddMovie = () => {
                   Rating
                 </span>
               </label>
-              <input
+              <Rating
+                onClick={handleRating}
+                ratingValue={rating}
+                size={50}
+                fillColor="gold"
+                emptyColor="gray"
+                max={5}
+                iconsCount={5}
+                allowHalfIcon={true}
+              />
+              <div>
+                <span className="text-sm text-gray-600">
+                  Selected Rating: {rating} Stars
+                </span>
+              </div>
+              {/* <input
                 name="rating"
                 type="number"
                 max={10}
                 placeholder="Enter your Rating"
                 className="input input-bordered"
                 required
-              />
+              /> */}
             </div>
             {/* Summary */}
             <div className="form-control col-span-2">

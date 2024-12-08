@@ -18,7 +18,6 @@ The purpose of this project is to create a centralized hub for movie enthusiasts
 - **Dynamic Search:** Quickly find movies using an intuitive search bar with live filtering.
 - **Interactive UI:** Smooth animations and transitions to improve user experience.
 - **Responsive Design:** Optimized for various devices, ensuring a consistent experience on desktops, tablets, and smartphones.
-- **Real-Time Notifications:** Receive instant feedback and alerts using toast notifications.
 - **Secure API Integration:** A secure server backend for efficient data handling and enhanced reliability.
 
 ## Packages Used
@@ -44,9 +43,5 @@ The purpose of this project is to create a centralized hub for movie enthusiasts
 - **Backend:** Node.js, Express
 - **Database:** MongoDB
 - **Hosting:** Surge, Firebase, Vercel
-
-## How to Contribute
-
-Contributions are highly appreciated! Fork the repository, create a new branch, and submit a pull request with your changes.
 
 Explore the Movie Portal and enjoy an engaging movie discovery journey! 🍿
