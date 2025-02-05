@@ -11,6 +11,7 @@ The purpose of this project is to create a centralized hub for movie enthusiasts
 - **Client:** [Movie Portal Client on Surge](http://assorted-team.surge.sh)
 - **Client:** [Movie Portal Client on Firebase](https://movie-portal-abed2.web.app)
 - **Server:** [Movie Portal Server on Vercel](https://movie-portal-server.vercel.app)
+  --**live-link**
 
 ## Key Features
 
